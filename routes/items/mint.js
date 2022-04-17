@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
     let createdNft;
     try {
         createdNft = await Nfts.create({
-            collectionId: data.collectionId,
+            collections_id: data.collectionId,
             ipfs: data.ipfs,
             creater_account: data.account,
             // owner_account: null
