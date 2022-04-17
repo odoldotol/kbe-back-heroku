@@ -27,6 +27,10 @@ module.exports = async (req, res) => {
         data.saleToken = "ETH";
     }
     
+    console.log("collectionId: " + data.collectionId);
+    console.log("ipfs: " + data.ipfs);
+    console.log("creater_account: " + data.account);
+
     // nft 데이터 생성하기
     let createdNft;
     try {
@@ -34,7 +38,7 @@ module.exports = async (req, res) => {
             collectionId: data.collectionId,
             ipfs: data.ipfs,
             creater_account: data.account,
-            owner_account: null
+            // owner_account: null
         });
     } catch (err) {
         return res.status(err.status || 500).send({message: err.message + ' (failed to create nft on DB)'});
