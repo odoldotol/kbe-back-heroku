@@ -21,12 +21,12 @@ if (process.env.DATABASE_URL) {
    dialect: 'postgres',
    native: true,  //2021 5월에 추가: pg-native를 npm으로 설치해야함
    protocol: 'postgres',
-  //  dialectOptions: {
-  //   ssl: {
-  //       require: true,
-  //       rejectUnauthorized: false
-  //   }
-  //  }
+   dialectOptions: {
+    ssl: {
+        require: true,
+        rejectUnauthorized: false
+    }
+   }
  })
 } 
 else {
