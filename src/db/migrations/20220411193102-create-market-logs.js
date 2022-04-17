@@ -37,15 +37,18 @@ module.exports = {
       buyer_account: {
         type: Sequelize.STRING,
         allowNull: true,
+        defaultValue: null,
       },
       transaction_hash: {
         type: Sequelize.STRING,
         allowNull: true,
         unique: true,
+        defaultValue: null,
       },
       transactedAt: {
         type: Sequelize.DATE,
         allowNull: true,
+        defaultValue: null,
       },
       createdAt: {
         allowNull: false,

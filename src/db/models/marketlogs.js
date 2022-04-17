@@ -44,16 +44,19 @@ module.exports = (sequelize, DataTypes) => {
     },
     buyer_account: {
       type: DataTypes.STRING,
-      allowNull: true
+      allowNull: true,
+      defaultValue: null
     },
     transaction_hash: {
       type: DataTypes.STRING,
       allowNull: true,
-      unique: true
+      unique: true,
+      defaultValue: null
     },
     transactedAt: {
       type: DataTypes.DATE,
-      allowNull: true
+      allowNull: true,
+      defaultValue: null
     }
   }, {
     sequelize,
