@@ -27,20 +27,17 @@ module.exports = async (req, res) => {
         data.saleToken = "ETH";
     }
     
-    console.log("collectionId: " + data.collectionId);
-    console.log("ipfs: " + data.ipfs);
-    console.log("creater_account: " + data.account);
+    // console.log("collectionId: " + data.collectionId);
+    // console.log("ipfs: " + data.ipfs);
+    // console.log("creater_account: " + data.account);
 
     // nft 데이터 생성하기
     let createdNft;
     try {
         createdNft = await Nfts.create({
-            // collectionId: data.collectionId,
-            collectionId: 4,
-            // ipfs: data.ipfs,
-            ipfs: "fljvcuoijsdnbgioir4g",
-            // creater_account: data.account,
-            creater_account: "0x0",
+            collectionId: data.collectionId,
+            ipfs: data.ipfs,
+            creater_account: data.account,
             // owner_account: null
         });
     } catch (err) {
