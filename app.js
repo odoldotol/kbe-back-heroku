@@ -43,8 +43,8 @@ app.post("/items/nfts/mint/", routes.mint);
 // 거래
 app.patch("/transactions/buy/", routes.buy);
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
-const HTTP_PORT = process.env.HTTP_PORT || 3000;
+const HTTPS_PORT = process.env.PORT || 4000;
+const HTTP_PORT = process.env.PORT || 3000;
 
 let server;
 
