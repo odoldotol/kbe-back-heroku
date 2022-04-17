@@ -43,7 +43,8 @@ app.post("/items/nfts/mint/", routes.mint);
 // 거래
 app.patch("/transactions/buy/", routes.buy);
 
-const HTTPS_PORT = process.env.HTTPS_PORT || 4000;
+const HTTPS_PORT = process.env.HTTPS_PORT || 443;
+const HTTP_PORT = process.env.HTTP_PORT || 80;
 
 let server;
 
@@ -59,7 +60,7 @@ let server;
 //   server.listen(HTTPS_PORT, () => console.log("https server runnning!!"));
 
 // } else {
-server = app.listen(HTTPS_PORT);
+server = app.listen(HTTP_PORT);
 console.log("http server runnning!!");
 // }
 module.exports = server;
