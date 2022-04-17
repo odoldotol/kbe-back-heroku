@@ -53,9 +53,9 @@ module.exports = async (req, res) => {
             sale_price: data.price,
             sale_token: data.saleToken,
             status_code: 3,
-            buyer_account: null,
-            transaction_hash: null,
-            transactedAt: null
+            // buyer_account: null,
+            // transaction_hash: null,
+            // transactedAt: null
         });
     } catch (err) {
         return res.status(err.status || 500).send({message: err.message + ' (failed to create marketlog on DB)'});
