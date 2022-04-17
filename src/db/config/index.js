@@ -18,12 +18,16 @@ const test = {
   host: "127.0.0.1",
   dialect: "mysql",
 };
+// const production = {
+//   username: process.env.DATABASE_USERNAME || "root",
+//   password: process.env.DATABASE_PASSWORD,
+//   database: "kbe_prod",
+//   host: "127.0.0.1",
+//   dialect: "mysql",
+// };
+
 const production = {
-  username: process.env.DATABASE_USERNAME || "root",
-  password: process.env.DATABASE_PASSWORD,
-  database: "kbe_prod",
-  host: "127.0.0.1",
-  dialect: "mysql",
-};
+  use_env_variable: DATABASE_URL
+}
 
 module.exports = { development, production, test };
