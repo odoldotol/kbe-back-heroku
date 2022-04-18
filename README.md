@@ -1,21 +1,17 @@
-# Server
+# deploy heroku version
 
-npm install
+* 배포때는 env_sample 를 빼고 .env 를 함께 배포할것
+* 
+*
+*
+---
 
-.env 만드세요 (.env_sample 참고)
+### 데이터베이스 마이그레이션이나 시드 등등 sequelize-cli 작업 하려면
 
-다음 명령을 통해 데이터베이스 만드세요. (mysql)
+    heroku config:set PGSSLMODE=no-verify
 
-    sequelize db:migrate
-    sequelize db:seed:all
+이 렇게 수정해주고 sequelize-cli 작업 해주고
 
-* npm start
-* npm run dev
-* npm run debug
+    heroku config:set PGSSLMODE=require
 
-
-## HTTPS
-
-
-https 서버를 쓰려면
-app.js 에 "//// HTTPS 서버 주석" 아래 부분의 주석들을 모두 해제하고 인증서를 준비하세요.
+다시 위와같이 수정해주고 배포하기
