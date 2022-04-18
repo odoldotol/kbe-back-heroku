@@ -57,8 +57,15 @@ module.exports = async (req, res) => {
             // transaction_hash: null,
             // transactedAt: null
         });
-    } catch (err) {
-        return res.status(err.status || 500).send({message: err.message + ' (failed to create marketlog on DB)'});
+    } catch (createErr) {
+        // nft 데이터 삭제 (데이터 무결성을 유지하려면 이 단위 작업이 모두 성공하거나 모두 실패하도록 해야함)
+        try {
+            await Nfts.destroy({ where: { id: createdNft.id } });
+        } catch (deleteErr) {
+            console.log("ERROR create Error: " + createErr);
+            return res.status(deleteErr.status || 500).send({message: deleteErr.message + ' (failed to create marketlog on DB && failed to delete nft on DB)'});
+        }
+        return res.status(createErr.status || 500).send({message: createErr.message + ' (failed to create marketlog on DB)'});
     }
 
     // payload 만들기

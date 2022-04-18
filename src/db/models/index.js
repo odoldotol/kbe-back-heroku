@@ -19,7 +19,7 @@ let sequelize =null;
 if (process.env.DATABASE_URL) {
  sequelize =new Sequelize(process.env.DATABASE_URL, {
    dialect: 'postgres',
-   native: true,  //2021 5월에 추가: pg-native를 npm으로 설치해야함
+   native: true,  // pg-native를 npm으로 설치해야함
    protocol: 'postgres',
    dialectOptions: {
     ssl: {
