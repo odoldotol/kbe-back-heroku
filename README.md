@@ -22,7 +22,7 @@
 
 
 ### API doc & DB Schema
-[API Doc](https://grove-hickory-8ec.notion.site/API-doc-d4583829581d4d3980f167d4b272edc2 "API Doc")
+[API Doc](https://lygorithm.notion.site/KBE-API-doc-d4583829581d4d3980f167d4b272edc2 "API Doc")
 
 
 ### 프로젝트 레포 링크
